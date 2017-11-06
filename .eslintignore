@@ -1,0 +1,18 @@
+node_modules/*
+
+# builded files
+build/*
+
+# logs from npm or yarn
+*.log
+
+# auto generated lock files
+*.lock
+
+# Readme files
+*.md
+
+#image files
+*.png
+*.svg
+*.jpg
