@@ -39,7 +39,7 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
-    "lint": "./node_modules/.bin/eslint  --c .eslintrc.json  '*'  '*/*'"
+    "lint": "./node_modules/.bin/eslint  --c ./config/.eslintrc.json --ignore-path ./config/.eslintignore  '*.js'  '*/*.js'"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -88,6 +88,8 @@
     "eslint-plugin-flowtype": "2.39.1",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
-    "eslint-plugin-react": "^7.4.0"
+    "eslint-plugin-react": "^7.4.0",
+    "stylelint": "^8.2.0",
+    "stylelint-webpack-plugin": "^0.9.0"
   }
 }
