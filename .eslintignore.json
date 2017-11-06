@@ -1,6 +1,6 @@
 {
-    "extends": "airbnb",
-    "rules": {
-      "global-require": 0
-    }
+  "extends": "airbnb",
+  "rules": {
+    "global-require": 0
+  }
 }

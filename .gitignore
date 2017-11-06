@@ -59,3 +59,6 @@ typings/
 
 # build stuff
 build
+
+# old stuff
+*.old
