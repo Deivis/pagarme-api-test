@@ -1,0 +1,15 @@
+{
+  "extends": "airbnb",
+  "rules": {
+    "react/jsx-filename-extension": 0,
+    "global-require": "warn",
+    "import/no-dynamic-require": "warn",
+    "no-param-reassign": "warn",
+    "no-console": "off",
+    "no-debugger": "warn"
+  },
+  "env": {
+    "browser": true,
+    "jest": true
+  }
+}
