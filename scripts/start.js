@@ -26,7 +26,6 @@ const {
   prepareProxy,
   prepareUrls,
 } = require('react-dev-utils/WebpackDevServerUtils');
-// eslint-disable-next-line
 const openBrowser = require('react-dev-utils/openBrowser');
 const paths = require('../config/paths');
 const config = require('../config/webpack.config.dev');
@@ -76,7 +75,7 @@ choosePort(HOST, DEFAULT_PORT)
       if (isInteractive) {
         clearConsole();
       }
-      // openBrowser(urls.localUrlForBrowser);
+      openBrowser(urls.localUrlForBrowser);
       return console.log(chalk.cyan('Starting the development server...\n'));
     });
 

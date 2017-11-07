@@ -1,15 +1,33 @@
 {
-  "extends": "airbnb",
+  "extends": [
+    "plugin:css-modules/recommended",
+    "airbnb"
+  ],
   "rules": {
     "react/jsx-filename-extension": 0,
     "global-require": "warn",
     "import/no-dynamic-require": "warn",
     "no-param-reassign": "warn",
     "no-console": "off",
-    "no-debugger": "warn"
+    "no-debugger": "warn",
+    "css-modules/no-unused-class": [
+      2,
+      {
+        "camelCase": true
+      }
+    ],
+    "css-modules/no-undef-class": [
+      2,
+      {
+        "camelCase": true
+      }
+    ]
   },
   "env": {
     "browser": true,
     "jest": true
-  }
+  },
+  "plugins": [
+    "css-modules"
+  ]
 }
