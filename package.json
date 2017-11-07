@@ -39,7 +39,8 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
-    "lint": "eslint --c ./config/.eslintrc.json --ignore-path ./config/.eslintignore '*.js' '*/*.js' '*/**/.js' && stylelint 'src/*.css' 'src/**/.css' -f verbose --config ./config/.stylelintrc"
+    "lint": "eslint --c ./config/.eslintrc --ignore-path ./config/.eslintignore 'src/*.js' 'src/**/.js' && stylelint 'src/*.css' 'src/**/.css' -f verbose --config ./config/.stylelintrc",
+    "lint:js-fix": "eslint --fix --c ./config/.eslintrc.json --ignore-path ./config/.eslintignore '*.js' '*/*.js' '*/**/.js'"
   },
   "jest": {
     "collectCoverageFrom": [

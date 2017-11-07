@@ -11,17 +11,18 @@ const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
 
 const envPublicUrl = process.env.PUBLIC_URL;
 
-function ensureSlash(path, needsSlash) {
-  const hasSlash = path.endsWith('/');
+function ensureSlash(ensurePath, needsSlash) {
+  const hasSlash = ensurePath.endsWith('/');
   if (hasSlash && !needsSlash) {
-    return path.substr(path, path.length - 1);
+    return ensurePath.substr(ensurePath, ensurePath.length - 1);
   } else if (!hasSlash && needsSlash) {
-    return `${path}/`;
+    return `${ensurePath}/`;
   }
-  return path;
+  return ensurePath;
 }
 
 const getPublicUrl = appPackageJson =>
+  // eslint-disable-next-line
   envPublicUrl || require(appPackageJson).homepage;
 
 // We use `PUBLIC_URL` environment variable or "homepage" field to infer
@@ -41,6 +42,7 @@ function getServedPath(appPackageJson) {
 module.exports = {
   dotenv: resolveApp('.env'),
   appBuild: resolveApp('build'),
+  appConfig: resolveApp('config'),
   appPublic: resolveApp('public'),
   appHtml: resolveApp('public/index.html'),
   appIndexJs: resolveApp('src/index.js'),

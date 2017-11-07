@@ -78,9 +78,9 @@ module.exports = {
     // We placed these paths second because we want `node_modules` to "win"
     // if there are any conflicts. This matches Node resolution mechanism.
     // https://github.com/facebookincubator/create-react-app/issues/253
-    modules: ['node_modules', paths.appNodeModules].concat(
+    modules: ['node_modules', paths.appNodeModules]
       // It is guaranteed to exist because we tweak it in `env.js`
-      process.env.NODE_PATH.split(path.delimiter).filter(Boolean)),
+      .concat(process.env.NODE_PATH.split(path.delimiter).filter(Boolean)),
     // These are the reasonable defaults supported by the Node ecosystem.
     // We also include JSX as a common component filename extension to support
     // some tools, although we do not recommend using it, see:
@@ -190,6 +190,7 @@ module.exports = {
                       // https://github.com/facebookincubator/create-react-app/issues/2677
                       ident: 'postcss',
                       plugins: () => [
+                        // eslint-disable-next-line
                         require('postcss-flexbugs-fixes'),
                         autoprefixer({
                           browsers: [
