@@ -10,6 +10,10 @@
     "no-param-reassign": "warn",
     "no-console": "off",
     "no-debugger": "warn",
+    "semi": [
+      "error",
+      "never"
+    ],
     "css-modules/no-unused-class": [
       2,
       {
