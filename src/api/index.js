@@ -1,6 +1,7 @@
 import pagarme from 'pagarme'
 
 import CreditCardTransaction from './creditCardTransaction'
+import Transactions from './transactions'
 
 let client
 
@@ -36,4 +37,5 @@ const formatCardData = ({
 
 export default {
   creditCardTransaction: CreditCardTransaction(connect, formatCardData),
+  transactions: Transactions(connect),
 }

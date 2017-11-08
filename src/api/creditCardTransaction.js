@@ -1,6 +1,7 @@
 import { merge, pipe } from 'ramda'
 
-let client
+import Transactions from './transactions'
+
 let connect
 let formatCardData
 
@@ -19,9 +20,8 @@ const formatTransactionData = (cardData, amount, installments) => {
 }
 
 async function creditCardTransaction(cardData, amount, installments) {
-  client = await connect()
-  return client.transactions
-    .create(formatTransactionData(cardData, amount, installments))
+  const { create } = Transactions(connect)
+  return create(formatTransactionData(cardData, amount, installments))
 }
 
 export default (mainConnect, mainFormatCardData) => {
