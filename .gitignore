@@ -62,3 +62,6 @@ build
 
 # old stuff
 *.old
+
+# vscode configuration
+.vscode
