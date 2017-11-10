@@ -10,6 +10,7 @@ export function connect() {
     return pagarme.client
       .connect({
         encryption_key: process.env.API_TEST_ENCRIPT_KEY,
+        api_key: process.env.API_TEST_KEY,
       })
       .then((clientResponse) => {
         client = clientResponse
