@@ -3,7 +3,10 @@ let connect
 
 async function getAll() {
   client = await connect()
-  return client.transactions.all()
+  return client.transactions.all({
+    date_created: `>=${new Date('2017-11-06').getTime()}`,
+    count: 0,
+  })
 }
 
 async function create(transactionParams) {
@@ -11,10 +14,11 @@ async function create(transactionParams) {
   return client.transactions.create(transactionParams)
 }
 
-async function capture(transactionId) {
+async function capture(transactionId, amount) {
   client = await connect()
   return client.transactions.capture({
     id: transactionId,
+    amount,
   })
 }
 
