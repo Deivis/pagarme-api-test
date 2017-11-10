@@ -1,8 +1,7 @@
-let client
-let connect
+import connect from './connect'
 
 async function getAll() {
-  client = await connect()
+  const client = await connect()
   return client.transactions.all({
     date_created: `>=${new Date('2017-11-06').getTime()}`,
     count: 0,
@@ -10,23 +9,21 @@ async function getAll() {
 }
 
 async function create(transactionParams) {
-  client = await connect()
+  const client = await connect()
   return client.transactions.create(transactionParams)
 }
 
 async function capture(transactionId, amount) {
-  client = await connect()
+  const client = await connect()
   return client.transactions.capture({
     id: transactionId,
     amount,
   })
 }
 
-export default (mainConnect) => {
-  connect = mainConnect
-  return {
-    getAll,
-    create,
-    capture,
-  }
+export default {
+  getAll,
+  create,
+  capture,
 }
+
